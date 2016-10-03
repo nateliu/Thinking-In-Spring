@@ -1,0 +1,35 @@
+buildscript {
+    ext {
+        springBootVersion = "1.4.0.RELEASE"
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = "thinking-in-spring"
+    version = "0.0.1"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.aspectj:aspectjweaver:1.8.9')
+    testCompile('org.mockito:mockito-core:2.1.0-RC.1')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('junit:junit')
+}

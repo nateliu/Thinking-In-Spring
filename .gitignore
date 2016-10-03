@@ -1,0 +1,11 @@
+# Complie files
+*.class
+
+# Package Files #
+*.war
+
+# build up folders
+.gradle/
+.idea/
+build/
+target/
