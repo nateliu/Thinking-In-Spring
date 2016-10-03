@@ -19,7 +19,7 @@ public class Minstrel {
         this.out = out;
     }
 
-    @Pointcut("execution(** com.spring.thinking.knight.IKnight.embarkOnQuest(..))")
+    @Pointcut("execution(** org.springframework.samples.knight.IKnight.embarkOnQuest(..))")
     public void AspectPointCut() {
     }
 
