@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("org.springframework.samples.controllers")
+@ComponentScan({"org.springframework.samples.controllers","org.springframework.samples.repositories"})
 public class SpringMVCConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
