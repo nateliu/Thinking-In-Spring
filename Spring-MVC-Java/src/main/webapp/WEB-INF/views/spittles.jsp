@@ -14,20 +14,22 @@
 </head>
 <body>
     <c:forEach items="${spittleList}" var="spittle">
-        <li id="spittle_<c:out value="spittle.id"/> ">
-            <div class="spittleMessage">
-                <c:out value="${spittle.message}"></c:out>
-            </div>
-            <div>
-                <span class="spittleTime" >
-                    <c:out value="${spittle.time}"></c:out>
-                </span>
-                <span class="spittleLocation">
-                    (<c:out value="${spittle.latitude}"></c:out>,
-                    <c:out value="${spittle.longitude}"></c:out>)
-                </span>
-            </div>
-        </li>
+        <a href="<c:url value="/spittles/${spittle.id}"/>">
+            <li id="spittle_<c:out value="spittle.id"/> ">
+                <div class="spittleMessage">
+                    <c:out value="${spittle.message}"></c:out>
+                </div>
+                <div>
+                    <span class="spittleTime" >
+                        <c:out value="${spittle.time}"></c:out>
+                    </span>
+                    <span class="spittleLocation">
+                        (<c:out value="${spittle.latitude}"></c:out>,
+                        <c:out value="${spittle.longitude}"></c:out>)
+                    </span>
+                </div>
+            </li>
+        </a>
     </c:forEach>
 </body>
 </html>

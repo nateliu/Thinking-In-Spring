@@ -19,6 +19,6 @@
 
 		<P> The time on the server is ${serverTime}. </P>
 		<a href="<c:url value="/spittles"/>">Spittles</a>|
-		<a href="<c:url value="/spittles/register"/>">Register</a>
+		<a href="<c:url value="/spittler/register"/>">Register</a>
 	</body>
 </html>
