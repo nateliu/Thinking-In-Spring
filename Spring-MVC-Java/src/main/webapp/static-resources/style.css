@@ -1,6 +1,4 @@
-body {
-    font-family: sans-serif;
-}
+body { background-color: #eee; font-family: sans-serif; }
 
 .spittleList h1 {
     font-size: 16pt;
@@ -44,3 +42,4 @@ div.errors {
     background-color: #ffcccc;
     border: 2px solid red;
 }
+#container { width: 500px; background-color: #fff; margin: 30px auto; padding: 30px; border-radius: 5px; }

@@ -1,6 +1,8 @@
 package org.springframework.samples.models;
 
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -9,20 +11,25 @@ import javax.validation.constraints.Size;
  */
 public class Spittler {
     private Long id;
+
     @NotNull
-    @Size(min = 2, max = 30, message="{firstName.size}")
+    @Size(min = 2, max = 30,message = "{firstName.size}")
     private String firstName;
+
     @NotNull
     @Size(min = 2, max = 30, message="{lastName.size}")
     private String lastName;
+
     @NotNull
     @Size(min = 4, max = 50, message="{userName.size}")
     private String userName;
+
     @NotNull
-    @Size(min = 5, max = 16, message="{passWord.size}")
+    @Size(min = 5, max = 16, message="{passWord.size}" )
     private String passWord;
+
     @NotNull
-    @Size(min = 5, max = 16)
+    @Email
     private String email;
 
     public Spittler() {

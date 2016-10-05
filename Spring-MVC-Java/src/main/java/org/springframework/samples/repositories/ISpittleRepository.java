@@ -1,6 +1,5 @@
 package org.springframework.samples.repositories;
 
-import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.samples.models.Spittle;
 import org.springframework.samples.models.Spittler;
 

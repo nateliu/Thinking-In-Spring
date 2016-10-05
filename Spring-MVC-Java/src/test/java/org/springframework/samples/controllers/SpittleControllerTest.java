@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
  */
 public class SpittleControllerTest {
     @Test
-    public void shouldShowRecentSpittles() throws Exception {
+    public void shouldShowRecentSpittlesTest() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(20);
         ISpittleRepository mockRepository = mock(ISpittleRepository.class);
         when(mockRepository.finSpittles(Long.MAX_VALUE, 20)).thenReturn(expectedSpittles);
@@ -36,7 +36,7 @@ public class SpittleControllerTest {
     }
 
     @Test
-    public void shouldShowPagedSpittles() throws Exception {
+    public void shouldShowPagedSpittlesTest() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(50);
         ISpittleRepository mockRepository = mock(ISpittleRepository.class);
         when(mockRepository.finSpittles(238900, 20)).thenReturn(expectedSpittles);
@@ -48,7 +48,7 @@ public class SpittleControllerTest {
     }
 
     @Test
-    public void testSpittle() throws Exception {
+    public void spittleTest() throws Exception {
         Spittle expectedSpittle = new Spittle(100L, "Hello", new Date());
         ISpittleRepository mockRepository = mock(ISpittleRepository.class);
         when(mockRepository.finOne(12345)).thenReturn(expectedSpittle);
@@ -61,21 +61,21 @@ public class SpittleControllerTest {
     }
 
     @Test
-    public void showRegister() throws Exception {
+    public void showRegisterTest() throws Exception {
         SpittleController controller = new SpittleController();
         MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(get("/spittles/register"))
+        mockMvc.perform(get("/spittler/register"))
                 .andExpect(view().name("registerForm"));
     }
 
     @Test
-    public void processRegister() throws Exception {
+    public void processRegisterTest() throws Exception {
         ISpittleRepository mockRepository = mock(ISpittleRepository.class);
         Spittler savedSpittler = new Spittler(100L, "Nate", "Liu", "Nate Liu", "12345", "test@163.com");
         when(mockRepository.save(any(Spittler.class))).thenReturn(savedSpittler);
         SpittleController controller = new SpittleController(mockRepository);
         MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(post("/spittles/register").param("firstName", "Nate").param("lastName", "Liu").param("userName", "nliu").param("passWord", "12345").param("email", "test@163.com"))
+        mockMvc.perform(post("/spittler/register").param("firstName", "Nate").param("lastName", "Liu").param("userName", "nliu").param("passWord", "12345").param("email", "test@163.com"))
                 .andExpect(redirectedUrl("/spittler/nliu"));
         verify(mockRepository, atLeastOnce()).save(any(Spittler.class));
     }

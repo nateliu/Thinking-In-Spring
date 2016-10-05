@@ -45,13 +45,12 @@ dependencies {
     compile ("org.springframework:spring-webmvc:$springVersion")
 	compile ("jstl:jstl:1.2")
     compile ("javax.validation:validation-api:1.1.0.Final")
-
-    compile ("org.springframework:spring-test:$springVersion")
+    compile ("org.hibernate:hibernate-validator:5.2.4.Final")
     // The production code uses the SLF4J logging API at compile time
     compile ("org.slf4j:slf4j-api:1.7.21")
-    compile ("org.mockito:mockito-core:2.1.0")
 
-
+    testCompile ("org.springframework:spring-test:$springVersion")
+    testCompile ("org.mockito:mockito-core:2.1.0")
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
